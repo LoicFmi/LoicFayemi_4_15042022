@@ -22,10 +22,25 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+// close modal form
 function closeModal() {
   modalbg.style.display = "none";
 }
 
 // close modal event
 modalCross.addEventListener("click", closeModal);
+
+// validate email form
+function validate(input) {
+  let mailRegex = "[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}";
+  if(input.value.match(mailRegex)) {
+  alert("Valid email address!");
+  document.getElementById("email").focus();
+  return true;
+  } else {
+  alert("You have entered an invalid email address!");
+  document.getElementById("email").focus();
+  return false;
+  }
+}
 
